@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aria-techniques</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -15,14 +16,14 @@
      to one or more elements through the use of an id reference list. 
     The id reference list contains one or more unique element ids. </p>
 
-   <h1> Example 1: Using aria-describedby to associate instructions with form fields</h1>
+   <h2> Example 1: Using aria-describedby to associate instructions with form fields</h2>
 <!--Sample form field using aria-describedby to associate instructions with form fields while there is a form label.-->
 <form>
     <label for="fname">First name</label>
     <input aria-describedby="int2" autocomplete="given-name" id="fname" type="text">
     <p id="int2">Your first name is sometimes called your "given name".</p>
   </form>
-  <h1> The aria-describedby provides more info about the button</h1>
+  <h2> The aria-describedby provides more info about the button</h2>
   <div>
     <span id="fontDesc">Select the font faces and sizes to be used on this page</span>
     <button aria-describedby="fontDesc" id="fontB" type="button">Fonts</button>
@@ -40,11 +41,76 @@
 <br>
 <br>
 
+<h1>Aria-required property</h1>
+
+<p>The objective of this technique is to provide programmatic indication that a form field (which shown through presentation to be required) 
+    is mandatory for successful submission of a form.</p>
+
+    <p>The fact that the element is required is often visually presented (via a text or non-text symbol, 
+or text indicating input is required or color / styling) but this is not programmatically determinable as part of the field's name.</p>
+
+<p>The WAI-ARIA aria-required property indicates that user input is required before submission. The aria-required property can have values of true or false. For example, 
+    
+    if a user must fill in an address field, then aria-required is set to true.</p>
 
 
+   <h2> Example 1: The required property is indicated by an asterisk placed in the label element</h2>
 
+    <form action="#" method="post">
+      <p>Note: * denotes a required field</p>
+      <div>
+        <label for="usrname">Login name *:</label>
+        <input aria-required="true" autocomplete="username" id="usrname" type="text">
+      </div>
+      <div>
+        <label for="pwd">Password *:</label>
+        <input aria-required="true" autocomplete="current-password" id="pwd" type="password">
+      </div>
+      <div>
+        <input type="submit" value="Login">
+      </div>
+    </form>
 
+  <h2>Example 2: The required property is indicated by the word "required" placed next to the label element</h2>
+  <form action="#" method="post">
+    <div>
+      <label for="fname">First name:</label> <span>(required)</span>
+      <input aria-required="true" autocomplete="given-name" id="fname" type="text">
+    </div>
+    <div>
+      <label for="mname">Middle name:</label> <span>(required)</span>
+      <input autocomplete="additional-name" id="mname" type="text">
+    </div>
+    <div>
+      <label for="lname">Last name:</label> <span>(required)</span>
+      <input aria-required="true" autocomplete="family-name" id="lname" type="text">
+    </div>
+    <div>
+      <label for="email">Email address:</label> <span>(required)</span>
+      <input aria-required="true" autocomplete="email" id="email" type="text">
+    </div>
+    <div>
+      <label for="zip_post">Zip / Postal code:</label> <span>(required)</span>
+      <input aria-required="true" autocomplete="postal-code" id="zip_post" type="text">
+    </div>
+    <div>
+      <input type="submit" value="Next Step">
+    </div>
+  </form>
+<h2>Required fields are indicated by a red border around the fields and a star icon rendered via CSS using content::after</h2>
+<form action="#" method="post">
+    <label data-required="true" for="acctnum">Account Number</label>
+    <input aria-required="true" id="acctnum" type="text">
   
+    <p data-required="true" id="radio_label">
+      Please send an alert when balance exceeds $3,000.
+    </p>
+  
+    <ul aria-required="true" aria-labelledby="radio_label" role="radiogroup">
+      <li aria-checked="false" id="rb1" role="radio" tabindex="0">Yes</li>
+      <li aria-checked="false" id="rb2" role="radio" tabindex="-1">No</li>
+    </ul>
+  </form>
 </body>
 
 </html>
