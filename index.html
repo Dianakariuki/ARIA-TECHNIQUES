@@ -213,6 +213,26 @@ Below is an example of a MathML function, using the math role, appropriate label
     <mn>1.5</mn>
   </math>
 </div>
+
+<h1> aria-labelledby for link purpose</h1>
+<h2>Example 1: Providing additional information for links</h2>
+<br>
+This example will mean that the link text as shown on screen is then used as the start of the accessible name for the link.
+ Screen readers will announce this as: "Read more ...Storms hit east coast" and will display that same text in the links list which is very useful for screen reader users who may browse by links.
+<br>
+<h2 id="headline">Storms hit east coast</h2>
+
+<p>Torrential rain and gale force winds have struck the east coast, 
+   causing flooding in many coastal towns.
+<a id="p123" href="news.html" aria-labelledby="p123 headline">Read more...</a></p>
+<h2>Example 2: Concatenating link text from multiple sources</h2>
+<br>
+There may be cases where an author will place a tag around a section of code that will be referenced.
+<br>
+<p>Download <span id="report-title">2012 Sales Report</span>:
+<a aria-labelledby="report-title pdf" href="#" id="pdf">PDF</a> |
+<a aria-labelledby="report-title doc" href="#" id="doc">Word</a> |
+<a aria-labelledby="report-title ppt" href="#" id="ppt">Powerpoint</a></p>
 </body>
 
 </html>
