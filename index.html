@@ -233,6 +233,51 @@ There may be cases where an author will place a tag around a section of code tha
 <a aria-labelledby="report-title pdf" href="#" id="pdf">PDF</a> |
 <a aria-labelledby="report-title doc" href="#" id="doc">Word</a> |
 <a aria-labelledby="report-title ppt" href="#" id="ppt">Powerpoint</a></p>
+
+<h1>Using aria-labelledby to provide a text alternative for non-text content</h1>
+<h2>Example 1: Providing a short description for a complex graphic</h2>
+<p>The aria-labelledby attribute to provide a short text description for a read-only complex graphic of an star rating pattern;
+ the graphic is composed of several image elements. The text alternative for the graphic is the label, visible on the page beneath the star pattern.</p>
+ <br>
+ <br>
+<h1> ARIA landmarks to identify regions of a page</h1>
+<p>The purpose of this technique is to provide programmatic access to sections of a web page. Landmark roles (or "landmarks") programmatically identify sections of a page. 
+    Landmarks help assistive technology (AT) users orient themselves to a page and help them navigate easily to various sections of a page.</p>
+
+
+    <h2> Example 1: Simple landmarks</h2>
+The following example shows how landmarks might be added to an HTML4 or XHTML 1.0 document:
+
+<div id="header" role="banner">A banner image and introductory title</div>
+<div id="sitelookup" role="search">....</div>
+<div id="nav" role="navigation">...a list of links here ... </div>
+<div id="content" role="main"> ... Ottawa is the capital of Canada ...</div>
+<div id="rightsideadvert" role="complementary">....an advertisement here...</div>
+<div id="footer" role="contentinfo">(c)The Freedom Company, 123 Freedom Way, Helpville, USA</div>
+
+<h2>Example 2: Multiple landmarks of the same type and aria-labelledby</h2>
+The following example shows a best practice of how landmarks might be added to an HTML4 or XHTML 1.0 document in situations where there are more than two of the same type of landmark on the same page. For instance, if a navigation role is used multiple times on a Web page, each instance may have a unique label specified using aria-labelledby:
+
+<div id="leftnav" role="navigation" aria-labelledby="leftnavheading">
+<h2 id="leftnavheading">Institutional Links</h2>
+<ul><li>...a list of links here ...</li> </ul></div>
+<div id="rightnav" role="navigation" aria-labelledby="rightnavheading">
+<h2 id="rightnavheading">Related topics</h2>
+<ul><li>...a list of links here ...</li></ul></div>
+<h2>Example 3: Multiple landmarks of the same type and aria-label</h2>
+The following example shows a best practice of how landmarks might be added to an HTML4 or XHTML 1.0 document in situations where there are more than two of the same type of landmark on the same page, and there is no existing text on the page that can be referenced as the label.
+
+<div id="leftnav" role="navigation" aria-label="Primary">
+<ul><li>...a list of links here ...</li></ul> </div>
+<div id="rightnav" role="navigation" aria-label="Secondary">
+<ul><li>...a list of links here ...</li> </ul></div>
+<h2> 4: Search form</h2>
+The following example shows a search form with a "search" landmark. The search role typically goes on the form element or a div surrounding the form.
+
+<form role="search">
+<label for="s6">search</label><input id="s6" type="text" size="20">
+...
+</form> 
 </body>
 
 </html>
