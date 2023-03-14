@@ -4,3 +4,6 @@
   [data-required=true]::after {
     content: url('/iconStar.gif');
   }
+  h1{
+    color: blue;
+  }
