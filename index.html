@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aria-techniques</title>
+</head>
+<body>
+<h1>Aria describedby</h1>
+<p>The purpose of this technique is to demonstrate how to use the WAI-ARIA aria-describedby property to provide programmatically determined,
+     descriptive information about a user interface element. 
+     The aria-describedby property may be used to attach descriptive information 
+     to one or more elements through the use of an id reference list. 
+    The id reference list contains one or more unique element ids. </p>
+
+   <h1> Example 1: Using aria-describedby to associate instructions with form fields</h1>
+<!--Sample form field using aria-describedby to associate instructions with form fields while there is a form label.-->
+<form>
+    <label for="fname">First name</label>
+    <input aria-describedby="int2" autocomplete="given-name" id="fname" type="text">
+    <p id="int2">Your first name is sometimes called your "given name".</p>
+  </form>
+  <h1> The aria-describedby provides more info about the button</h1>
+  <div>
+    <span id="fontDesc">Select the font faces and sizes to be used on this page</span>
+    <button aria-describedby="fontDesc" id="fontB" type="button">Fonts</button>
+  </div>
+  <div>
+    <span id="colorDesc">Select the colors to be used on this page</span>
+    <button aria-describedby="colorDesc" id="colorB" type="button">Colors</button>
+  </div>
+  <div>
+    <span id="customDesc">Customize the layout and styles used on this page</span>
+    <button aria-describedby="customDesc" id="customB" type="button">Customize</button>
+  </div>
+  <b> NOTE: The aria-describedby property is not designed to reference descriptions on an external resource - since it is an id, 
+    it must reference an element in the same DOM document.</b>
+  
+</body>
+
+</html>
