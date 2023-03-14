@@ -111,6 +111,106 @@ or text indicating input is required or color / styling) but this is not program
       <li aria-checked="false" id="rb2" role="radio" tabindex="-1">No</li>
     </ul>
   </form>
+
+  <h1> WAI-ARIA role</h1>
+  <h2>Example 1: A simple toolbar</h2>
+A toolbar containing three buttons. The div element has a role of "toolbar", and the img elements have "button" roles:
+
+    <div role="toolbar"
+      tabindex="0" 
+      id="customToolbar" 
+      onkeydown="return optionKeyEvent(event);"
+      onkeypress="return optionKeyEvent(event);"
+      onclick="return optionClickEvent(event);"
+      onblur="hideFocus()"
+      onfocus="showFocus()"
+      > 
+      <img src="img/btn1.gif" 
+           role="button" 
+           tabindex="-1" 
+           alt="Home" 
+           id="b1" 
+           title="Home">
+      <img src="img/btn2.gif" 
+           role="button" 
+           tabindex="-1" 
+           alt="Refresh" 
+           id="b2" 
+           title="Refresh">
+     <img src="img/btn3.gif" 
+           role="button" 
+           tabindex="-1" 
+           alt="Help" 
+           id="b3" 
+           title="Help"> 
+ </div>  
+                   
+ <h2>Example 2: A Tree Widget</h2>
+ <ul role="tree" tabindex="0">
+    <li role="treeitem">Birds</li>
+    <li role="treeitem">Cats
+      <ul role="group">
+        <li role="treeitem">Siamese</li>
+        <li role="treeitem">Tabby</li>
+      </ul>
+    </li>
+    <li role="treeitem">Dogs
+      <ul role="group">
+        <li role="treeitem">Small Breeds
+          <ul role="group">
+            <li role="treeitem">Chihuahua</li>
+            <li role="treeitem">Italian Greyhound</li>
+            <li role="treeitem">Japanese Chin</li>
+          </ul>
+        </li>
+        <li role="treeitem">Medium Breeds
+          <ul role="group">
+            <li role="treeitem">Beagle</li>
+            <li role="treeitem">Cocker Spaniel</li>
+            <li role="treeitem">Pit Bull</li>
+          </ul>
+        </li>
+        <li role="treeitem">Large Breeds
+          <ul role="group">
+            <li role="treeitem">Afghan</li>
+            <li role="treeitem">Great Dane</li>
+            <li role="treeitem">Mastiff</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h1>Aria-label</h1>
+  <p>The purpose of this technique is to provide a label for objects that can be read by assistive technology. 
+    The aria-label attribute provides the text label for an object, such as a button. When a screen reader encounters the object,
+     the aria-label text is read so that the user will know what it is.</p>
+
+    <h2>Example 1: Distinguishing navigation landmarks</h2> 
+The following example shows how aria-label could be used to distinguish two navigation landmarks in a HTML4 and XHTML 1.0 document, where there are more than two of the same type of landmark on the same page, and there is no existing text on the page that can be referenced as the label.
+
+<div role="navigation" aria-label="Primary">
+<ul><li>...a list of links here ...</li></ul> </div>
+<div role="navigation" aria-label="Secondary">
+<ul><li>...a list of links here ...</li> </ul></div>
+Example 2: Identifying region landmarks
+The following example shows how a generic "region" landmark might be added to a weather portlet. There is no existing text on the page that can be referenced as the label, so it is labelled with aria-label.
+
+<div role="region" aria-label="weather portlet"> 
+...
+</div>
+<h2>Example 3: Providing a label for Math</h2>
+Below is an example of a MathML function, using the math role, appropriate label, and MathML rendering:
+
+<div role="math" aria-label="6 divided by 4 equals 1.5">
+  <math xmlns="https://www.w3.org/1998/Math/MathML">
+    <mfrac>
+      <mn>6</mn>
+      <mn>4</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mn>1.5</mn>
+  </math>
+</div>
 </body>
 
 </html>
