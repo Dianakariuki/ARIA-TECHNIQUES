@@ -278,6 +278,22 @@ The following example shows a search form with a "search" landmark. The search r
 <label for="s6">search</label><input id="s6" type="text" size="20">
 ...
 </form> 
+<h1>The legend tag</h1>
+<p>Groups of form controls, like checkboxes and radio buttons often require a higher level of "label" in addition to the <label>.
+   This high level "label" is made with <fieldset> and <legend>.</p>
+<br>
+<br>
+<img src="images/dob.png">
+
+<fieldset>
+  <legend>Your date of birth</legend>
+  <label for="dobDay">Day</label>
+  <select id="dobDay">…</select>
+  <label for="dobMonth">Month</label>
+  <select id="dobMonth">…</select>
+  <label for="dobYear">Year</label>
+  <input id="dobYear" type="text" placeholder="YYYY">
+</fieldset>
 </body>
 
 </html>
