@@ -354,9 +354,16 @@ div[role=radiogroup] {
   border: black thin solid;
 } 
 <br>
-<h1></h1>
-<h2></h2>
-<p>.</p>
+<h1> Using a button to collapse and expand a region</h1>
+<p class="button">
+  <button id="button1" class="buttonControl" aria-controls="t1" aria-expanded="false"><span>Show</span> Topic 1</button>
+</p>
+
+<div id="t1" class="topic" role="region" tabindex="-1" >
+  Topic 1 is all about being Topic 1 and may or may not have anything to do with other topics.
+</div>
+
+
 </body>
 
 </html>
